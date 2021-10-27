@@ -1,13 +1,13 @@
 *.tar.gz
 
 *.exe
-src/litecoin
-src/litecoind
-src/litecoin-cli
-src/litecoin-tx
-src/test/test_litecoin
-src/test/test_litecoin_fuzzy
-src/qt/test/test_litecoin-qt
+src/apexgenesiscoin
+src/apexgenesiscoind
+src/apexgenesiscoin-cli
+src/apexgenesiscoin-tx
+src/test/test_apexgenesiscoin
+src/test/test_apexgenesiscoin_fuzzy
+src/qt/test/test_apexgenesiscoin-qt
 
 # autoreconf
 Makefile.in
@@ -74,12 +74,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-litecoin-qt
-Litecoin-Qt.app
+apexgenesiscoin-qt
+ApexGenesiscoin-Qt.app
 
 # Unit-tests
 Makefile.test
-litecoin-qt_test
+apexgenesiscoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -92,7 +92,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_litecoin.coverage/
+test_apexgenesiscoin.coverage/
 total.coverage/
 coverage_percent.txt
 
