@@ -1,7 +1,10 @@
 FROM ubuntu:16.04
+
+WORKDIR /apexgenesiscoin
+
 COPY ./apexgenesiscoin.conf /root/.apexgenesiscoin/apexgenesiscoin.conf
 COPY . /apexgenesiscoin
-WORKDIR /apexgenesis
+
 #shared libraries and dependencies
 RUN apt update
 RUN apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
@@ -15,7 +18,7 @@ RUN apt-get install -y libdb4.8-dev libdb4.8++-dev
 RUN apt-get install -y libminiupnpc-dev
 #ZMQ
 RUN apt-get install -y libzmq3-dev
-#build faithcoin source
+#build apexgenesiscoin source
 RUN ./autogen.sh
 RUN ./configure
 RUN make

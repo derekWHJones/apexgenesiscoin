@@ -1,0 +1,73 @@
+version: "3.9"
+
+services:
+  server:
+    container_name: server
+    networks:
+      nodes:
+        ipv4_address: 172.33.0.7
+    build:
+      context: ./
+      dockerfile: docker/server/Dockerfile
+    volumes:
+      - ./:/server
+    ports:
+      - 5000:5000
+  node1:
+    container_name: node1
+    networks:
+      nodes:
+        ipv4_address: 172.33.0.3
+    build:
+      context: ./
+      dockerfile: docker/nodes/Dockerfile
+    image: apexgenesiscoin
+    volumes:
+      - ./:/node1
+    ports:
+      - 9778:9777
+  node2:
+    container_name: node2
+    networks:
+      nodes:
+        ipv4_address: 172.33.0.4
+    image: apexgenesiscoin
+    volumes:
+      - ./:/node2
+    ports:
+      - 9779:9777
+  node3:
+    container_name: node3
+    networks:
+      nodes:
+        ipv4_address: 172.33.0.5
+    image: apexgenesiscoin
+    volumes:
+      - ./:/node3
+    ports:
+      - 9780:9777
+  main:
+    container_name: main
+    build:
+      context: ./
+      dockerfile: docker/main/Dockerfile
+    networks:
+      nodes:
+        ipv4_address: 172.33.0.6
+    volumes:
+      - main-volume:/root/.apexgenesiscoin
+    ports:
+      - 9781:9777
+      - 9775:9776
+
+volumes:
+  main-volume:
+
+networks:
+  nodes:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.33.0.0/16
+          gateway: 172.33.0.1
