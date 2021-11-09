@@ -2,5 +2,5 @@
 echo "Mining... Press [CTRL+C] to stop"
 while :
 do
-	apexgenesiscoin-cli generatetoaddress 1 MHjRUW7SSvebicFuNfAimDoKdwEHWahS92
+	apexgenesiscoin-cli generatetoaddress 1 AN8kP4v9JCqMdJubwhUYNqvKLGgiLBS24t
 done
