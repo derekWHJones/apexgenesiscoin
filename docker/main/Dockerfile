@@ -3,7 +3,6 @@ FROM ubuntu:16.04
 WORKDIR /apexgenesiscoin
 
 COPY ./docker/main/apexgenesiscoin.conf /root/.apexgenesiscoin/apexgenesiscoin.conf
-COPY ./docker/main/mainwallet /root/.apexgenesiscoin
 COPY . /apexgenesiscoin
 
 #shared libraries and dependencies

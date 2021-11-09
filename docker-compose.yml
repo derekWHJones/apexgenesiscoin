@@ -12,7 +12,7 @@ services:
     volumes:
       - ./:/server
     ports:
-      - 5000:5000
+      - 5004:5000
   node1:
     container_name: node1
     networks:
