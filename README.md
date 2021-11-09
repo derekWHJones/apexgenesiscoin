@@ -39,6 +39,18 @@ on a patch set.
 
 Developer IRC can be found on Freenode at #apexgenesiscoin-dev.
 
+### Running
+
+To run four nodes plus the api to make calls to the rpc.
+
+Install docker
+
+run
+
+docker-compose build
+
+docker-compose up
+
 Testing
 -------
 
