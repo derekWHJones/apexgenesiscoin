@@ -25,4 +25,4 @@ RUN make
 RUN make install
 #open service port
 EXPOSE 9777 19777
-CMD ["apexgenesiscoind", "--printtoconsole"]
+CMD ["apexgenesiscoind", "--printtoconsole", "--addresstype=legacy", "--changetype=legacy"]

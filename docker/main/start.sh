@@ -1,4 +1,4 @@
 #!/bin/bash
 
-apexgenesiscoind --daemon
+apexgenesiscoind --daemon --addresstype=legacy --changetype=legacy
 ./docker/main/mining.sh
