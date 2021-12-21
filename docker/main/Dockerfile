@@ -3,7 +3,6 @@ FROM ubuntu:16.04
 WORKDIR /apexgenesiscoin
 
 COPY ./docker/main/apexgenesiscoin.conf /root/.apexgenesiscoin/apexgenesiscoin.conf
-COPY ./docker/main/wallet /root/.apexgenesiscoin/
 COPY . /apexgenesiscoin
 
 #shared libraries and dependencies
@@ -19,6 +18,7 @@ RUN apt-get install -y libdb4.8-dev libdb4.8++-dev
 RUN apt-get install -y libminiupnpc-dev
 #ZMQ
 RUN apt-get install -y libzmq3-dev
+RUN apt-get install -y jq
 #build apexgenesiscoin source
 RUN ./autogen.sh
 RUN ./configure
@@ -26,6 +26,7 @@ RUN make
 RUN make install
 RUN chmod +x docker/main/start.sh
 RUN chmod +x docker/main/mining.sh
+RUN chmod +x docker/main/loadwallets.sh
 #open service port
 EXPOSE 9777 19777 9776
 
