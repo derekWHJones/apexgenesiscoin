@@ -17,3 +17,4 @@ elements of the ApexGenesiscoin Core reference implementation of ApexGenesiscoin
 3. Run `docker-compose up -d`
 
 It is important you run the two commands separately and not as `docker-compose up --build -d`
+If space runs out on the server run `docker system prune` to delete unused containers, networks, and images. If this proejct fails on `apt-get update` that means you've likely run out of space.
