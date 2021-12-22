@@ -19,6 +19,7 @@ RUN apt-get install -y libminiupnpc-dev
 #ZMQ
 RUN apt-get install -y libzmq3-dev
 RUN apt-get install -y jq
+RUN apt-get install -y curl
 #build apexgenesiscoin source
 RUN ./autogen.sh
 RUN ./configure
